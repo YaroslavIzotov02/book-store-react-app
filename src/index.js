@@ -12,13 +12,19 @@ import { el } from './Components/Contacts'
 
 //компонент каталога
 function Catalog() {
+  const [catalog, setCatalog] = useState(books)
+  const removeBook = (id) => {
+    let newCatalog = catalog.filter((book) => book.id !== id)
+    console.log(newCatalog)
+    setCatalog(newCatalog)
+  }
   return (
     <>
       <Header />
       <NavBar />
       <div className="catalog">
-        {books.map((book, index) => {
-          return <Book id={index} book={book}></Book>
+        {catalog.map((book, index) => {
+          return <Book book={book} handleRemove={removeBook}></Book>
         })}
       </div>
       <Footer />

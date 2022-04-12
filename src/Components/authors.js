@@ -1,1 +1,1 @@
-export const authors = [];
+export let authors = [];

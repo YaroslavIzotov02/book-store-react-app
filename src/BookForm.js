@@ -4,6 +4,7 @@ import { books } from './Components/books'
 
 //компонент добавления новой книги в каталог
 const BookForm = (props) => {
+  const [id, setId] = useState('')
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
   const [description, setDescription] = useState('')
@@ -27,6 +28,7 @@ const BookForm = (props) => {
   function handleSubmit(e) {
     books.unshift({
       ...books,
+      id: books.length + 1,
       title: title,
       author: author,
       description: description,
