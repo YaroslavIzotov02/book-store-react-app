@@ -22,6 +22,7 @@ function Catalog() {
   }
   const addToCart = (id) => {
     let item = catalog.find(item => item.id === id)
+    item.itemCount += 1
     cartItems.push(item)
   }
   return (
