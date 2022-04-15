@@ -10,6 +10,7 @@ const BookForm = (props) => {
   const [description, setDescription] = useState('')
   const [pageCount, setPageCount] = useState('')
   const [price, setPrice] = useState('')
+  const [itemCount, setItemCount] = useState(0)
   function handleTitle(e) {
     setTitle(e.target.value)
   }
@@ -34,12 +35,14 @@ const BookForm = (props) => {
       description: description,
       pageCount: pageCount,
       price: price,
+      itemCount: 0,
     })
     setTitle('')
     setAuthor('')
     setDescription('')
     setPageCount('')
-    setPageCount('')
+    setPrice('')
+    setItemCount(0)
     console.log(books)
     e.preventDefault()
   }
