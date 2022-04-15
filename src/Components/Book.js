@@ -9,6 +9,10 @@ const Book = (props) => {
   const showInfo = () => {
     alert(props.book.author)
   }
+  const addToCart = (id) => {
+    console.log(id)
+    props.addToCart(id)
+  }
   return (
     <div key={props.book.id} className="book">
       <h1>{props.book.title}</h1>
@@ -20,7 +24,7 @@ const Book = (props) => {
         title={props.book.title}
       /> */}
       <div className="menu">
-        <button>+ в корзину</button>
+        <button onClick={() => addToCart(props.book.id)}>+ в корзину</button>
         <button onClick={() => removeBook(props.book.id)}>удалить</button>
         <button>обновить</button>
         <button onClick={showInfo}>информация</button>

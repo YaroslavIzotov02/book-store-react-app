@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { authors } from './Components/authors'
-import { books } from './Components/books'
+import { authors } from './authors'
+import { books } from './books'
 
 //компонент добавления новой книги в каталог
 const BookForm = (props) => {

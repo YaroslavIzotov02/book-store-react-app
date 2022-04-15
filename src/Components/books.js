@@ -5,7 +5,7 @@ export let books = [
     author: 'Автор книги',
     description: '',
     pageCount: '',
-    price: '',
+    price: '555',
     img: 'https://marketplace.canva.com/EAD7WuSVrt0/1/0/1003w/canva-colorful-illustration-young-adult-book-cover-LVthABb24ik.jpg',
   },
   {
@@ -14,7 +14,7 @@ export let books = [
     author: 'Автор книги',
     description: '',
     pageCount: '',
-    price: '',
+    price: '111',
     img: 'https://marketplace.canva.com/EAD7WuSVrt0/1/0/1003w/canva-colorful-illustration-young-adult-book-cover-LVthABb24ik.jpg',
   },
   {
@@ -23,7 +23,7 @@ export let books = [
     author: 'Автор книги',
     description: '',
     pageCount: '',
-    price: '',
+    price: '333',
     img: 'https://marketplace.canva.com/EAD7WuSVrt0/1/0/1003w/canva-colorful-illustration-young-adult-book-cover-LVthABb24ik.jpg',
   },
   {
@@ -32,7 +32,7 @@ export let books = [
     author: 'Автор книги',
     description: '',
     pageCount: '',
-    price: '',
+    price: '444',
     img: 'https://marketplace.canva.com/EAD7WuSVrt0/1/0/1003w/canva-colorful-illustration-young-adult-book-cover-LVthABb24ik.jpg',
   },
   {

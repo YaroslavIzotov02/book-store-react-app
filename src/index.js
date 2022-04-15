@@ -6,8 +6,10 @@ import App from './Components/App'
 import reportWebVitals from './reportWebVitals'
 import { books } from './Components/books'
 import { authors } from './Components/authors'
-import BookForm from './BookForm'
+import { cartItems } from './Components/cartItems'
+import BookForm from './Components/BookForm'
 import Book from './Components/Book'
+import Cart from './Components/Cart'
 import { el } from './Components/Contacts'
 
 //компонент каталога
@@ -18,13 +20,17 @@ function Catalog() {
     console.log(newCatalog)
     setCatalog(newCatalog)
   }
+  const addToCart = (id) => {
+    let item = catalog.find(item => item.id === id)
+    cartItems.push(item)
+  }
   return (
     <>
       <Header />
       <NavBar />
       <div className="catalog">
         {catalog.map((book, index) => {
-          return <Book book={book} handleRemove={removeBook}></Book>
+          return <Book book={book} handleRemove={removeBook} addToCart={addToCart}></Book>
         })}
       </div>
       <Footer />
@@ -61,7 +67,7 @@ const AuthorForm = () => {
   )
 }
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header">
       <p>Book Store</p>
@@ -69,7 +75,7 @@ const Header = () => {
   )
 }
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className="footer">
       <p></p>
@@ -100,7 +106,7 @@ function AuthorPage() {
 }
 
 //компонент меню
-function NavBar() {
+export function NavBar() {
   function openBookPage() {
     ReactDOM.render(<BookPage />, document.getElementById('root'))
   }
@@ -110,10 +116,15 @@ function NavBar() {
   function openCatalogPage() {
     ReactDOM.render(<Catalog />, document.getElementById('root'))
   }
+  function openCart() {
+    ReactDOM.render(<Cart />, document.getElementById('root'))
+  }
   return (
     <ul className="navbar">
       <li>
-        <a href="#">Корзина</a>
+        <a href="#" onClick={openCart}>
+          Корзина
+        </a>
       </li>
       <li style={{ float: 'left' }}>
         <a href="#" onClick={openCatalogPage}>
