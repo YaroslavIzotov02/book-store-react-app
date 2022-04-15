@@ -71,7 +71,7 @@ const AuthorForm = () => {
 export const Header = () => {
   return (
     <div className="header">
-      <p>Book Store</p>
+      <p>GlobGlobGabgalab book basement</p>
     </div>
   )
 }
