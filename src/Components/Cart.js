@@ -42,12 +42,21 @@ function Cart() {
       )
     }
   }
-
   return (
     <>
       <Header />
       <NavBar />
-      <div>{items.length === 0 && <p>Корзина пуста</p>}</div>
+      <div>
+        {items.length === 0 && (
+          <p>
+            Корзина пуста, добавьте книги, иначе он придет за вами
+            <img
+              src="https://i.kym-cdn.com/photos/images/original/001/352/921/c49.jpg_large"
+              alt=""
+            />
+          </p>
+        )}
+      </div>
       {items.length !== 0 && (
         <div className="cart">
           <table>

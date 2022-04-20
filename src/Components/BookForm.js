@@ -61,7 +61,7 @@ const BookForm = (props) => {
         <label htmlFor="authors">Автор:</label>
         <select name="authors" id="authors" onChange={handleAuthor}>
           {authors.map((author, index) => {
-            return <option value={author}>{author}</option>
+            return <option value={index}>{author}</option>
           })}
         </select>
         <br />

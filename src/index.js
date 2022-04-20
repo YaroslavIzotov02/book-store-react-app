@@ -10,18 +10,26 @@ import { cartItems } from './Components/cartItems'
 import BookForm from './Components/BookForm'
 import Book from './Components/Book'
 import Cart from './Components/Cart'
-import { el } from './Components/Contacts'
+import axios from 'axios'
 
 //компонент каталога
 function Catalog() {
-  const [catalog, setCatalog] = useState(books)
+  const [catalog, setCatalog] = useState([])
+
+  React.useEffect(() => {
+    axios.get('https://localhost:7200/api/Book').then((response) => {
+      console.log(response)
+    }).catch(err => console.log(err))
+  }, [])
+
   const removeBook = (id) => {
     let newCatalog = catalog.filter((book) => book.id !== id)
     console.log(newCatalog)
     setCatalog(newCatalog)
   }
+
   const addToCart = (id) => {
-    let item = catalog.find(item => item.id === id)
+    let item = catalog.find((item) => item.id === id)
     item.itemCount += 1
     cartItems.push(item)
   }
@@ -30,8 +38,16 @@ function Catalog() {
       <Header />
       <NavBar />
       <div className="catalog">
+        {/* {console.log(catalog)} */}
         {catalog.map((book, index) => {
-          return <Book book={book} handleRemove={removeBook} addToCart={addToCart}></Book>
+          return (
+            <Book
+              key={index}
+              book={book}
+              handleRemove={removeBook}
+              addToCart={addToCart}
+            ></Book>
+          )
         })}
       </div>
       <Footer />
